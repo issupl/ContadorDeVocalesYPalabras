@@ -20,6 +20,14 @@ function cuentaPalabras(letraNmenosUno,letraN){
     return condicion;
 }
 
+function engadirEspacioFinal(frase){
+
+    if(frase[frase.length - 1] !== " "){
+        frase = frase + ' ';
+    }
+    return frase;
+}
+
 function entradaDeTexto(texto){
 
     let convertida = new String(texto);
@@ -29,9 +37,8 @@ function entradaDeTexto(texto){
         numPalabras:0
     }
     
-    if(convertida[convertida.length - 1] !== " "){
-        convertida = convertida + ' ';
-    }
+    convertida = engadirEspacioFinal(convertida);
+
 
     for(let i = 0; i < convertida.length ; i++){
         if(cuentaVocales(convertida[i])){
